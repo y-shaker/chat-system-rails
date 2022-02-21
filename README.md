@@ -20,7 +20,6 @@ This was my first project using RubyonRails. It consisted of a chat system to en
   Copy the sample database.yml file and edit the database configuration as required.
  ```
  cp config/database.yml.sample config/database.yml
-
  ```
 3. Create and setup the database
 
@@ -43,25 +42,4 @@ This was my first project using RubyonRails. It consisted of a chat system to en
 
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
