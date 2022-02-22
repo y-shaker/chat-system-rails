@@ -37,6 +37,43 @@ This was my first project using RubyonRails. It consisted of a chat system to en
 
  You can test backend now with URL http://localhost:3000
 
+ ## REST API
+  The REST API to the be able to use the system.
+
+### Get a list of all Application
+```
+GET http://localhost:3000/applications
+```
+
+### Create an Application
+Adding in the body the name of the application
+```
+POST http://localhost:3000/applications
+```
+
+### Get a list of all chats in this application
+```
+GET http://localhost:3000/applications/:token/chats
+```
+
+### Creating a Chat
+Adding in the body the clients id of the chat
+```
+POST http://localhost:3000/applications/:token/chats
+```
+
+### Get a list of all messages in this chat
+also able to search through the messages using ransack using one of its attributes like the body or client that send the message
+```
+GET http://localhost:3000/applications/:token/chats/:chat_id/messages
+```
+
+### Create a message
+Adding in the body the user id of the sender and the message itself
+```
+POST http://localhost:3000/applications/:token/chats/:chat_id/messages
+```
+
 
 
 
