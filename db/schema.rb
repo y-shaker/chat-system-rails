@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_26_124701) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_21_170744) do
   create_table "applications", force: :cascade do |t|
-    t.string "token", null: false
+    t.string "token"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_26_124701) do
     t.string "application_token"
     t.integer "client_id"
     t.integer "client_2_id"
-    t.integer "messages_count"
     t.index ["application_token"], name: "index_chats_on_application_token"
     t.index ["client_2_id"], name: "index_chats_on_client_2_id"
     t.index ["client_id"], name: "index_chats_on_client_id"

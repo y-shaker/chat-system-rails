@@ -62,7 +62,7 @@ POST http://localhost:3000/clients
 ```
 #### Example:
 ```
-{ "name" : "your name" , "chat_id" : :id}
+{ "name" : "your name"}
 ```
 
 ### Get a list of all users

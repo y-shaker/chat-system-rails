@@ -3,3 +3,4 @@ class RemoveApplicationIdFromChat < ActiveRecord::Migration[7.0]
     remove_column :chats, :application_id, :integer
   end
 end
+
