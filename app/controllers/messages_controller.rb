@@ -18,8 +18,15 @@ class MessagesController < ApplicationController
   # POST /messages
   def create
     @message = Message.new(message_params)
+    chat = Chat.find(params[:chat_id])
+    bool = true
+    if ((@message.client_id != chat.client_id) && (@message.client_id != chat.client_2_id))
+      bool = false
+    end
+      
 
-    if @message.save
+
+    if @message.save && bool
       render json: @message, status: :created
     else
       render json: @message.errors, status: :unprocessable_entity
