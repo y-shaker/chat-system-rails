@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   
   resources :applications , param: :token do
     resources :chats do
+      post 'messages/:client_id' => 'messages#create'
       resources :messages do
+        
       end
     end
 

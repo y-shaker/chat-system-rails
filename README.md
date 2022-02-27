@@ -15,20 +15,20 @@ This was my first project using RubyonRails. It consisted of a chat system to en
   git clone https://github.com/youssef-shaker/chat-system-rails.git
   ```
 
-2. Create database.yml file
 
-  Copy the sample database.yml file and edit the database configuration as required.
- ```
- cp config/database.yml.sample config/database.yml
- ```
-3. Create and setup the database
+2. Create the database
 
- Run the following commands to create and setup the database.
+ Run the following command to create the database.
 
  ```
  bundle exec rake db:create
- bundle exec rake db:setup
  ```
+3. Installing gems
+
+```
+bundle install
+```
+
 4. Start Rails Server
  
  ```
@@ -40,15 +40,42 @@ This was my first project using RubyonRails. It consisted of a chat system to en
  ## REST API
   The REST API to the be able to use the system.
 
+### Create an Application
+Adding in the body the name of the application
+
+#### Example:
+```
+{ "name" : "my_application"}
+
+POST http://localhost:3000/applications
+```
+
 ### Get a list of all Application
 ```
 GET http://localhost:3000/applications
 ```
 
-### Create an Application
-Adding in the body the name of the application
+### Create a user
+Adding a name and chat_id
+
+#### Example:
 ```
-POST http://localhost:3000/applications
+{ "name" : "your name" , "chat_id" : :id}
+
+POST http://localhost:3000/clients
+```
+
+### Get a list of all users
+```
+GET http://localhost:3000/clients
+```
+
+### Creating a Chat
+Adding in the body the clients id of the chat
+#### Example:
+```
+{ "client_id" : :id , "client_2_id" : :id}
+POST http://localhost:3000/applications/:token/chats
 ```
 
 ### Get a list of all chats in this application
@@ -56,23 +83,33 @@ POST http://localhost:3000/applications
 GET http://localhost:3000/applications/:token/chats
 ```
 
-### Creating a Chat
-Adding in the body the clients id of the chat
+### Delete a chat
 ```
-POST http://localhost:3000/applications/:token/chats
+DELETE http://localhost:3000/applications/:token/chats/:id
+```
+
+### Create a message
+Adding in the body of the message itself
+#### Example:
+```
+{ "body": "the message itself"}
+POST http://localhost:3000/applications/:token/chats/:chat_id/messages/:client_id
+```
+
+### Delete a message
+```
+DELETE http://localhost:3000/applications/:token/chats/:chat_id/messages/:id
 ```
 
 ### Get a list of all messages in this chat
 also able to search through the messages using ransack using one of its attributes like the body or client that send the message
 ```
 GET http://localhost:3000/applications/:token/chats/:chat_id/messages
+
+GET http://localhost:3000/applications/:token/chats/:chat_id/messages?q[body_cont]=texttobesearchedhere
 ```
 
-### Create a message
-Adding in the body the user id of the sender and the message itself
-```
-POST http://localhost:3000/applications/:token/chats/:chat_id/messages
-```
+
 
 
 

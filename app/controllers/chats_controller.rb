@@ -37,6 +37,12 @@ class ChatsController < ApplicationController
     end
   end
 
+  def destroy
+    @chat = Chat.find_by(id: params[:id])
+    @chat.destroy
+
+  end
+
   
 
   private
