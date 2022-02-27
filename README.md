@@ -42,12 +42,12 @@ bundle install
 
 ### Create an Application
 Adding in the body the name of the application
-
+```
+POST http://localhost:3000/applications
+```
 #### Example:
 ```
 { "name" : "my_application"}
-
-POST http://localhost:3000/applications
 ```
 
 ### Get a list of all Application
@@ -57,12 +57,12 @@ GET http://localhost:3000/applications
 
 ### Create a user
 Adding a name and chat_id
-
+```
+POST http://localhost:3000/clients
+```
 #### Example:
 ```
 { "name" : "your name" , "chat_id" : :id}
-
-POST http://localhost:3000/clients
 ```
 
 ### Get a list of all users
@@ -72,10 +72,12 @@ GET http://localhost:3000/clients
 
 ### Creating a Chat
 Adding in the body the clients id of the chat
+```
+POST http://localhost:3000/applications/:token/chats
+```
 #### Example:
 ```
 { "client_id" : :id , "client_2_id" : :id}
-POST http://localhost:3000/applications/:token/chats
 ```
 
 ### Get a list of all chats in this application
@@ -90,10 +92,12 @@ DELETE http://localhost:3000/applications/:token/chats/:id
 
 ### Create a message
 Adding in the body of the message itself
+```
+POST http://localhost:3000/applications/:token/chats/:chat_id/messages/:client_id
+```
 #### Example:
 ```
 { "body": "the message itself"}
-POST http://localhost:3000/applications/:token/chats/:chat_id/messages/:client_id
 ```
 
 ### Delete a message
