@@ -5,7 +5,7 @@ class Chat < ApplicationRecord
   has_many :messages ,:dependent => :destroy
 
   validates :client_id, presence: true
-  validates :client_id_2, presence: true
+  validates :client_2_id, presence: true
   
 
 #   before_save :fix_counter_cache, :if => ->(er) { !er.new_record? && er.event_id_changed? }
