@@ -186,6 +186,8 @@ GEM
     rspec-support (3.11.0)
     ruby-graphviz (1.2.5)
       rexml
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     sqlite3 (1.4.2)
     strscan (3.0.1)
     thor (1.2.1)
@@ -211,6 +213,7 @@ DEPENDENCIES
   rails-erd
   ransack (~> 2.5)
   rspec-rails
+  shoulda-matchers
   sqlite3 (~> 1.4)
   tzinfo-data
 
